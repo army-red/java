@@ -1,0 +1,28 @@
+\jdk1.6.0 -- JDK的根目录，包含一些软bai件版权，声明，和自述文du件，
+同时zhi包含归档了的Java平台源代dao码包src.zip
+\jdk1.6.0\bin -- JDK包含的一些开发工具执行文件
+\jdk1.6.0\jre\bin\client
+包含 Java HotSpotTM Client Virtual Machine 要用的 DLL 文件
+\jdk1.6.0\jre\bin\server
+包含 Java HotSpotTM Server Virtual Machine 要用的 DLL 文件
+\jdk1.6.0\lib -- Java开发工具要用的一些库文件，有包含了支持JDK工具的非核心类库tool.jar，
+dt.jar 归档的 BeanInfo 文件
+用于告诉IDE这样显示java组件怎样让开发者在自己的应用程序中用户化它们
+\jdk1.6.0\jre -- JDK使用的Java运行环境（JRE）的根目录，这个运行环境实现了Java平台
+\jdk1.6.0\jre\bin -- Java平台所要用的工具和库的可执行文件
+这些可执行文件和 /jdk1.6.0/bin相同的。
+//Java 启动器工具充当了应用程序启动器(覆盖了1.1版本的JDK推出的旧版本JRE工具)
+这个路径不需要设置 PATH 环境变量
+\jdk1.6.0\jre\bin\client -- 包含Java Hotspot(Java性能引擎) 客户虚拟机要用的DLL文件
+\jdk1.6.0\jre\bin\server -- 包含Java Hotspot(Java性能引擎) 服务器虚拟机要用的DLL文件
+\jdk1.6.0\jre\lib -- JRE要用的代码库，属性设置，资源文件。
+例如rt.jar Java 引导类库(java 核心APIRunTime类)
+charsets.jar 字符转换类库
+\jdk1.6.0\jre\lib\ext -- 默认的Java平台扩展安装环境
+包含localedata.jar 是 ava.text 和 java.util包要用到的地区数据
+\jdk1.6.0\jre\lib\security -- 包含安全管理文件，有安全规则(java.policy)
+和安全属性文件(java.security)
+\jdk1.6.0\jre\lib\applet -- Java applets 要的Jar包，可以放到lib/applet/目录，
+这样可以节省 applet 类装载器从本地文件系统装载 大的applets 所需的applet类时间
+减少从网上下载具有相同的保护的时间。
+\jdk1.6.0\jre\lib\fonts 包含平台所需的TrueType字体文件

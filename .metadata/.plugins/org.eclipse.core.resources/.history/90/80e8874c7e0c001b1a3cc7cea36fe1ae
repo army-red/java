@@ -1,0 +1,135 @@
+import java.io.*;
+import java.util.*;
+import java.util.concurrent.CountDownLatch;
+
+
+
+public class LinkedList {
+
+    static File f_choose = null;
+    static List<File> MainTree = new java.util.LinkedList<File>();
+    static File ROOT = new File("ROOT", MainTree);
+    public static void main(String[] args) throws Exception {
+        
+        f_choose = ROOT;
+        boolean SystemFlag = true;
+        while (SystemFlag) {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            
+            System.out.println("|| 1 add || 2 delete || 3 show || 4 exit || 5 selectFile || 6 search ||");
+
+            int choose = Integer.parseInt(br.readLine());
+            switch (choose) {
+                case 1:
+                    addFile(f_choose.SubTree);
+                    // for (int i=0; i<5; i++)  {
+                        
+                    //     ((java.util.LinkedList<File>) MainTree).addLast(new File(String.valueOf(i)));
+                    // }
+                    
+                    break;
+
+                case 2:
+                    //deleteFile(f_choose);
+                    break;
+
+                case 3:
+                    showList(f_choose.SubTree);
+                    break;
+
+                case 4:
+                    SystemFlag = false;
+                    break;
+
+                case 5:
+                    chooseFile(f_choose.SubTree);
+                    break;
+                
+                case 6:
+                    search(f_choose.SubTree);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+    }
+
+    public static void addFile(LinkedList<File> list){
+        System.out.println("input new file name: ");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String name = br.readLine();
+
+        list.addLast(new File(name));
+        System.out.println("file create succesed!");
+    }
+
+    
+    public static void showList(LinkedList list){
+        for (File f : list) {
+            System.out.println("|| : " + f.getName());
+        }
+             
+    }
+
+    public static void chooseFile(LinkedList list) throws Exception{
+        System.out.println("choose file number: ");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int choose = Integer.parseInt(br.readLine());
+        
+        int count = 0;
+        for (File f : list) {
+            if(choose == count){
+                f_choose = f;
+                break;
+            }
+            count++;
+        }
+        System.out.println("you have select the file: " + f_choose.getName());
+    }
+
+    public static void search(LinkedList list) throws Exception{
+        System.out.println("input name searching for: ");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String name = br.readLine();
+        int loc = -1,i = 0;
+        
+        for (File f : list) {
+            
+            if(name.equals(f.getName())){
+                loc = i;
+            }
+            i++;
+        }
+        System.out.println("it's loacated at: " + loc);
+    }
+}
+
+class File{
+    String name;
+    Integer no, nums;
+    
+    LinkedList SubTree = null;
+
+
+	public File(String name) {
+		//super();
+        this.name = name;
+        SubTree = new LinkedList();
+	}
+	public File(String name, List<File> SubTree) {
+		//super();
+		this.name = name;
+		SubTree = (List<File>) new LinkedList();
+    }
+    
+
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+    
+}

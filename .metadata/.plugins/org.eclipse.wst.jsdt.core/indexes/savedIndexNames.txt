@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+F:\army_red\Projects\Java\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1498495290.index
+3118066373.index
+3063276972.index
+340235000.index
+2652343114.index
