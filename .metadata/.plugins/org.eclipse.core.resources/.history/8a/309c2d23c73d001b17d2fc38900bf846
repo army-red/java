@@ -1,0 +1,118 @@
+import java.io.*;
+import java.util.*;
+import java.util.regex.*;
+
+
+public class HuffmanCode {
+    public static void main(String[] args) {
+
+        Map<String , String> map = TreeConstruct();
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println("Input the message: ");
+        String input = br.readLine();
+
+        if(Pattern.matches("/^[a-z]+$/", input)){
+            System.out.println(coding(input));
+        }else if(Pattern.matches("/^[0-1]+$/", input)){
+            System.out.println(decode(input));
+        }else{
+            System.out.println("Input error! Please input correct sample.");
+        }
+    }
+
+    private static char[] decode(String input) {
+        return null;
+    }
+
+    private static Map<String, String> TreeConstruct() {
+
+        List<HuffmanNode> unlinked = new ArrayList<>();
+        List<HuffmanNode> linked = new ArrayList<>();
+        
+        HuffmanNode i = new HuffmanNode(9,"i");
+        unlinked.add(i);
+        HuffmanNode c = new HuffmanNode(4,"c");
+        unlinked.add(c);
+        HuffmanNode n = new HuffmanNode(3,"n");
+        unlinked.add(n);
+        HuffmanNode l = new HuffmanNode(3,"l");
+        unlinked.add(l);
+        HuffmanNode f = new HuffmanNode(2,"f");
+        unlinked.add(f);
+        HuffmanNode o = new HuffmanNode(2,"o");
+        unlinked.add(o);
+        HuffmanNode a = new HuffmanNode(2,"a");
+        unlinked.add(a);
+        HuffmanNode u = new HuffmanNode(1,"u");
+        unlinked.add(u);
+        HuffmanNode h = new HuffmanNode(1,"h");
+        unlinked.add(h);
+        HuffmanNode p = new HuffmanNode(1,"p");
+        unlinked.add(p);
+        HuffmanNode t = new HuffmanNode(1,"t");
+        unlinked.add(t);
+
+        Collections.sort(unlinked, new Comparator<HuffmanNode>() {
+ 
+            @Override
+            public int compare(HuffmanNode o1, HuffmanNode o2) {
+                // 升序
+                //return o1.getAge()-o2.getAge();
+                return o1.value().compareTo(o2.value());
+                // 降序
+                // return o2.getAge()-o1.getAge();
+                // return o2.getAge().compareTo(o1.getAge());
+            }
+        });
+
+
+    }
+
+    private static char[] coding(String input) {
+        return null;
+    }
+}
+
+class HuffmanNode{
+
+
+    int value;
+    String repre;
+
+    HuffmanNode parent;
+    HuffmanNode leftChild;
+    HuffmanNode rightChild;
+    
+
+	public HuffmanNode(HuffmanNode parent, HuffmanNode leftChild, HuffmanNode rightChild, int value, String repre) {
+		this.parent = parent;
+		this.leftChild = leftChild;
+		this.rightChild = rightChild;
+		this.value = value;
+		this.repre = repre;
+	}
+	public HuffmanNode(HuffmanNode parent, HuffmanNode leftChild, HuffmanNode rightChild, int value) {
+		this.parent = parent;
+		this.leftChild = leftChild;
+		this.rightChild = rightChild;
+		this.value = value;
+	}
+	public HuffmanNode(HuffmanNode parent, int value, String repre) {
+		this.parent = parent;
+		this.value = value;
+		this.repre = repre;
+	}
+	public HuffmanNode(HuffmanNode leftChild, HuffmanNode rightChild, int value) {
+		this.leftChild = leftChild;
+		this.rightChild = rightChild;
+		this.value = value;
+	}
+    public HuffmanNode(int value, String repre) {
+		this.value = value;
+		this.repre = repre;
+	}
+    
+
+}

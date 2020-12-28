@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+import java.util.regex.*;
+
+
+public class HuffmanCode {
+    public static void main(String[] args) {
+
+        Map<String , String> map = TreeConstruct();
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println("Input the message: ");
+        String input = br.readLine();
+
+        if(Pattern.matches("/^[a-z]+$/", input)){
+            System.out.println(coding(input));
+        }else if(Pattern.matches("/^[0-1]+$/", input)){
+            System.out.println(decode(input));
+        }else{
+            System.out.println("Input error! Please input correct sample.");
+        }
+    }
+
+    private static char[] decode(String input) {
+        return null;
+    }
+
+    private static Map<String, String> TreeConstruct() {
+        return null;
+    }
+
+    private static char[] coding(String input) {
+        return null;
+    }
+}
+
+class HuffmanNode{
+
+    HuffmanNode parent;
+    HuffmanNode leftChild;
+    HuffmanNode rightChild;
+    int value;
+    String repre;
+
+}
